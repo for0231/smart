@@ -364,7 +364,7 @@ gulp.task('build', function (cb) {
 	}
 })
 
-gulp.task('default', ['clean'], function (cb) {
+gulp.task('default', gulp.series('clean'), function (cb) {
 	var tasks = ['build', 'copy'];
 
 	return sequence.apply(cb, tasks);
